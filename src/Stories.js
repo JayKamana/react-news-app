@@ -5,9 +5,17 @@ class Stories extends Component {
   render() {
     return (
       <div>
-        <h2 className="text-center">Top Stories</h2>
         {this.props.stories.map((story, index) => {
-          return <Story key={index} />;
+          return (
+            <Story
+              key={index}
+              source={story.source.name}
+              title={story.title}
+              description={story.description}
+              date={story.publishedAt}
+              url={story.url}
+            />
+          );
         })}
       </div>
     );

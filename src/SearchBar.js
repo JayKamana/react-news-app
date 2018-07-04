@@ -10,7 +10,7 @@ class SearchBar extends Component {
             <input
               type="text"
               className="form-control"
-              placeholder="Search Category"
+              placeholder="Search Keywords"
               value={this.props.value}
               onChange={e => this.props.onChange(e.target.value)}
             />

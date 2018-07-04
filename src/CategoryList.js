@@ -1,20 +1,34 @@
 import React, { Component } from 'react';
-import { ListGroup, ListGroupItem } from 'reactstrap';
+import CategoryItem from './CategoryItem';
 
 class CategoryList extends Component {
+  state = {
+    active: 'Top Stories'
+  };
+
+  setActive = category => {
+    this.setState({ active: category });
+  };
+
   render() {
     return (
       <div>
-        <h2>Categories</h2>
-        <ListGroup>
-          {this.props.list.map((category, index) => {
-            return (
-              <ListGroupItem key={index} tag="button" action>
-                {category}
-              </ListGroupItem>
-            );
-          })}
-        </ListGroup>
+        <div className="card">
+          <div class="card-header text-center">Categories</div>
+          <div className="list-group list-group-flush">
+            {this.props.list.map((category, index) => {
+              return (
+                <CategoryItem
+                  active={this.state.active}
+                  setActive={this.setActive}
+                  key={index}
+                  category={category}
+                  onClick={this.props.onClick}
+                />
+              );
+            })}
+          </div>
+        </div>
       </div>
     );
   }
