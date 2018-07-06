@@ -5,13 +5,14 @@ class Stories extends Component {
   render() {
     return (
       <div>
-        {this.props.stories.map((story, index) => {
+        {this.props.stories.map(story => {
           return (
             <Story
-              key={index}
+              key={story.id}
               source={story.source.name}
               title={story.title}
               description={story.description}
+              image={story.urlToImage}
               date={story.publishedAt}
               url={story.url}
             />

@@ -14,7 +14,7 @@ class CategoryList extends Component {
     return (
       <div>
         <div className="card">
-          <div class="card-header text-center">Categories</div>
+          <div className="card-header text-center">Categories</div>
           <div className="list-group list-group-flush">
             {this.props.list.map((category, index) => {
               return (
